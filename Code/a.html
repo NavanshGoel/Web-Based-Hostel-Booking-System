@@ -1,0 +1,250 @@
+<!DOCTYPE HTML>
+<html lang="en"></html>
+<head>
+	<title>Registration</title>
+	<meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="template.css">
+	<style>
+		body {
+			background: var(--primary-color);
+			overflow-y: scroll;
+		}
+		.body {
+			height:auto;
+			position:relative;
+		}
+		.l-heading {
+			padding-left: 8rem ;
+		}
+		.form-container {
+			display:flex;
+			height:65%;
+			justify-content: center;
+			align-items: center;
+		}
+		.form-group {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 2rem;
+			
+		}
+		form {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			width:604.5px;
+			background: var(--primary-color);
+			padding:2rem 2rem 4rem 2rem;
+			
+		}
+		label {
+			color: #fff;
+			font-size: 1.65rem;
+			text-align: center;
+		}
+		.imp::after {
+			content:'*';
+			color:#c72727;
+		}
+		#pass {
+			width:272.284px;
+			font-size: 1.4rem;
+			padding: 0 1rem;
+		}
+		#btn {
+			width:8rem;
+			text-align: center;
+			margin: auto;
+			
+		}
+		#id {
+			width:272.284px;
+			font-size: 1.4rem;
+			padding: 0 1rem;
+		}
+		.select {
+			width:272px;
+			display:flex;
+			justify-content: center;
+			align-items: center;
+	
+		}
+		select {
+			width:80px;
+			height: 30px;
+		}
+		.left {
+			transform: translateX(-1100px);
+			animation: left 1s forwards ease-out;
+		}
+		.right {
+			transform: translateX(1100px);
+			animation: left 1s forwards ease-out;
+		}
+		
+		/* Animations */
+		@keyframes left{
+			to{
+				transform: translateX(0);
+			}
+		}
+		@keyframes right{
+			to{
+				transform: translateX(0);
+			}
+		}
+		
+		.main-footer {
+			background: none;
+		}
+	</style>
+</head>
+
+	<body>
+		<div class="menu-wrap">
+			<input type="checkbox" class="toggler">
+			<div class="hamburger"><div></div></div>
+			<div class="menu">
+			  <div>
+				 <div>
+					<ul>
+					  <li><a href="form.html">Home</a></li>
+					  
+					  <li><a href="contact.php">Contact</a></li>
+					</ul>
+				 </div>
+			  </div>
+			</div>
+		</div>
+		<div class="body">
+			<div class="nav">
+				<div class="l-heading">
+					<h1>Registration Form</h1>
+				</div>
+			</div>
+			<div class="form-container">
+				<form action="index1.php" method="post" enctype="multipart/form-data" >
+
+					<div class="form-group">
+						<label for="Registration_number" class="imp left">Registration Number:</label>	
+						<input oninput="let p = this.selectionStart; this.value = this.value.toUpperCase();this.setSelectionRange(p, p);" / type="text" name="id"required id="id" class="right">
+					</div>
+
+					<div class="form-group">
+						<label for="name" class="left">Name:</label>	
+						<input type="text" name="name" id="pass" class="right" required>
+					</div>
+
+					<div class="form-group">
+						<label for="email" class="imp left">Email:</label>	
+						<input type="email" name="email" id="pass" class="right" required>
+					</div>
+
+					<div class="form-group">
+						<label for="cemail" class="left">Confirm Email:</label>	
+						<input type="email" name="cemail" id="pass" class="right"required>
+					</div>
+
+					<div class="form-group">
+						<label for="father" class="left">Father Name:</label>	
+						<input type="text" name="father" id="pass" class="right" required>
+					</div>
+
+					<div class="form-group">
+						<label for="password" class="left">Password:</label>	
+						<input type="password" name="pass" id="pass" class="right" required>
+					</div>
+
+					<div class="form-group">
+						<label for="cpass" class="left">Confirm Password:</label>	
+						<input type="password" name="cpass" id="pass" class="right" required>
+					</div>
+
+					<div class="form-group">
+						<label for="programme" class="left">Programme:</label>	
+						<input type="text" name="prog" id="pass" class="right" required>
+					</div>
+
+					<div class="form-group">
+						<label for="year" class="left">Year:</label>
+						<div class="select">
+							<select name="year" class="right">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</div>	
+					</div>
+
+					<div class="form-group">
+						<label for="address" class="left">Address:</label>	
+						<input type="text" name="add" id="pass" class="right" required>
+					</div>
+
+					<div class="form-group">
+						<label for="state" class="left">State:</label>	
+						<input type="text" name="state" id="pass" class="right" required>
+					</div>
+
+					<div class="form-group">
+						<label for="blood" class="left">Blood Group:</label>	
+						<div class="select">
+							<select name="blood" class="right">
+								<option value="A+">A+</option>
+								<option value="A-">A-</option>
+								<option value="B+">B+</option>
+								<option value="B-">B-</option>
+								<option value="AB+">AB+</option>
+								<option value="AB-">AB-</option>
+								<option value="O+">O+</option>
+								<option value="O-">O-</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="mobile" class="imp left">Phone Number:</label>	
+						<input type="text" name="mob" id="pass" class="right" required>
+					</div>
+
+					<div class="form-group">
+						<label for="gender" class="left">Gender:</label>
+						<div class="select">	
+							<select name="gen" class="right">
+								<option value="male">MALE</option>
+								<option value="female">FEMALE</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="country" class="left">Country:</label>	
+						<input type="text" name="country" id="pass" class="right" required>
+					</div>
+
+					<div class="form-group">
+						<label for="dob" class="left">Date Of Birth:</label>	
+						<input type="text" name="dob" id="pass" placeholder="yyyy-mm-dd" class="right" required>
+					</div>
+					
+					<input type="submit" name="submit" value="submit" class="btn" id="btn">
+				</form>>
+			</div>
+			<footer class="main-footer">
+				<p>
+					Copyright &copy; 2020, All Rights Reserved.
+				</p>
+			</footer>    
+		</div>
+	</body>
+</html>
+
+
+
+
+
+					

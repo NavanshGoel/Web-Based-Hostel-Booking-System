@@ -1,0 +1,289 @@
+:root {
+   --background-color:#4E554E;
+   --closed-color:#c72727;
+   --booking-color:#4E69A2;
+   --open-color:#5CB85C;
+   --primary-color: rgba(26, 31, 31, 0.85);
+   --secondary-color: rgba(229, 148, 0 , 0.9);
+   --overlay-color: rgba(24, 29, 32, 0.95);
+   --menu-speed: 0.75s;
+}
+
+* {
+   margin:0;
+   padding:0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: 'Roboto' ,sans-serif;
+   line-height: 1.5;
+   background: var(--background-color);
+}
+
+
+
+/* Navbar */
+.menu-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.menu-wrap .toggler {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+}
+
+.menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  padding: 1rem;
+  background: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hamburger Line */
+.menu-wrap .hamburger > div {
+  position: relative;
+  flex: none;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+/* Hamburger Lines - Top & Bottom */
+.menu-wrap .hamburger > div::before,
+.menu-wrap .hamburger > div::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  width: 100%;
+  height: 2px;
+  background: inherit;
+}
+
+/* Moves Line Down */
+.menu-wrap .hamburger > div::after {
+  top: 10px;
+}
+
+/* Toggler Animation */
+.menu-wrap .toggler:checked + .hamburger > div {
+  transform: rotate(135deg);
+}
+
+/* Turns Lines Into X */
+.menu-wrap .toggler:checked + .hamburger > div:before,
+.menu-wrap .toggler:checked + .hamburger > div:after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+/* Rotate On Hover When Checked */
+.menu-wrap .toggler:checked:hover + .hamburger > div {
+  transform: rotate(225deg);
+}
+
+/* Show Menu */
+.menu-wrap .toggler:checked ~ .menu {
+  visibility: visible;
+}
+
+.menu-wrap .toggler:checked ~ .menu > div {
+  transform: scale(1);
+  transition-duration: var(--menu-speed);
+}
+
+.menu-wrap .toggler:checked ~ .menu > div > div {
+  opacity: 1;
+  transition:  opacity 0.4s ease 0.4s;
+}
+
+.menu-wrap .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-wrap .menu > div {
+  background: var(--overlay-color);
+  border-radius: 50%;
+  width: 200vw;
+  height: 200vw;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  transition: all 0.4s ease;
+}
+
+.menu-wrap .menu > div > div {
+  text-align: center;
+  max-width: 90vw;
+  max-height: 100vh;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.menu-wrap .menu > div > div > ul > li {
+  list-style: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.menu-wrap .menu > div > div > ul > li > a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 1.8rem;
+  transition: color 0.4s ease;
+}
+
+.menu-wrap .menu > div > div > ul > li > a:hover {
+  color: var(--secondary-color);
+}
+
+
+.container {
+   padding:1.5rem;
+   display: grid;
+   grid-template-columns: repeat(7,1fr);
+   grid-gap: 0.5rem;
+}
+
+.container .box {
+   text-align: center;
+   padding:1rem;
+   color: #fff;
+}
+
+.container .box h1{
+   font-size: 1.5rem;
+}
+
+.container .open {
+   background: var(--open-color);
+}
+.container .closed {
+   background: var(--closed-color);
+}
+.container .booking {
+   background: var(--booking-color);
+}
+
+.nav {
+   display: flex;
+   height:100px;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.l-heading {
+   color: #fff;
+   font-size: 2rem;
+   text-align: center;
+   width: 90%;
+   padding-left: 12rem;
+}
+
+.nav .user {
+   display:flex;
+   padding:0 1.5rem;
+   justify-content: center;
+   align-content: center;
+}
+
+.nav .user i {
+   color:#fff;
+   padding-right: 0.9rem;
+}
+
+.nav .user p {
+   color: #fff;
+   font-size: 1.2rem;
+   padding-top: 0.1rem;
+   letter-spacing: 0.1rem;
+}
+
+/* Responsive layout */
+
+@media only screen and (max-width: 420px){
+  .l-heading{
+    font-size: 0.7rem;
+    padding-left: 2rem;
+ }
+ .nav {
+  display: flex;
+  height:100px;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+ .nav .user p {
+  color: #fff;
+  font-size: 0.9rem;
+  padding-top: 0.1rem;
+  letter-spacing: 0.1rem;
+}
+/* i {
+  font-size: 0.5rem;
+} */
+  .container{
+    padding:0.5rem;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-content: center;
+    align-items: center;
+    grid-gap: 0.5rem;
+}
+}
+
+.container .box {
+  text-align: center;
+  padding:0.5rem;
+  /* width:50%; */
+  color: #fff;
+}
+
+.container .box h1{
+  font-size: 1rem;
+}
+
+/* @media only screen and (min-width:1366px){
+  .container{
+    padding:0.5rem;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    justify-content: center;
+    align-items: center;
+    grid-gap: 0.5rem;
+}
+} */
