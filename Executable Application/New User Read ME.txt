@@ -1,0 +1,20 @@
+   Admin LOGIN
+
+ADMIN ID : ADMIN
+password : admin@123
+
+
+   DEMO STUDENT LOGIN
+ID: 19BCE1092
+password: azam
+
+
+
+OPEN THE form.exe file to run the application.
+
+
+
+   DATABASE
+Username: root
+password: root
+Port used: 3306
